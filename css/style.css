@@ -1,0 +1,15 @@
+body{
+    width: 100%;
+    height: 100%;
+    background:#232627;
+}
+
+.logo {
+  background: url('http://reactivespaces.com/static/img/rs_logo_white.png');
+  width: 295px;
+  height: 30px;
+  border-style:none;
+  position: absolute;
+  top:50%;
+  left:39%;
+}
