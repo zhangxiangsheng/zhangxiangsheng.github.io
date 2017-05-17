@@ -8,12 +8,12 @@ ul{
 a,img{
     display: block;
 }
-.content-main{ position: relative; width: 800px; height: 411px; background: #bbb9b9; margin-left: auto; margin-right: auto; margin-top: 50px; }
+.content-main{ position: relative; width: 800px; height: 411px; margin-left: auto; margin-right: auto; margin-top: 50px; }
 .content-btn{
     position: absolute;
     width:100px;
     height:411px;
-    background: rgba(150,150,150,0.5);
+
     z-index:10;
     cursor: pointer;
 }

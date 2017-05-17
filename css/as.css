@@ -321,167 +321,10 @@ content: "";
     		 	margin: auto;
     		 	margin-top: 90px;
 			}
-	.xiangqing{
-		width: 80%;
-		margin: 0  auto;
-		overflow: hidden;
-	}
-		.xiangqing ul{
-			width: 100%;
-			
-			overflow: hidden;
-			margin-top: 20px;
-			margin-bottom: 10px;
-		}
-		.xiangqing ul li{
-			height: 100%;
-			float: left;
-			padding: 0px;
-			background: #f4f4f4;
-			position: relative;
-		}
-		.tu ul{
-		overflow: hidden;
-		margin-top: 50px;
 
-		}
-		.tu ul li{
-		height: 261px;
-			padding: 0;
-	}
-		.bottom{
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      position: absolute;
-      left: 0px;
-      bottom: 0px;
-      margin: auto;
-      /* display: none; */
-      opacity: 0;
-    }
-    
-    .xiangqing ul li:hover .bottom{
-      display: block;
-      /* animation: xianshi .5s linear forwards; */
-      animation: xianshi 0.5s linear forwards;
-      /* animation: 动画名称 动画执行时间 动画执行效果 动画执行次数(默认为1  infinite(不断重复执行)forward)  执行方向(normal/alternate) ; */
-    }
-    /* 帧动画 */
-    @keyframes xianshi{
-      0%{
-        opacity: 0;
-        /* background: rgba(0, 0, 0, 0.05); */
-        /* transform: translateY(0px); */
-      }
-      10%{
-        opacity: 0.1;
-        /* background: rgba(0, 0, 0, 0.1); */
-      }
-      20%{
-        opacity: 0.2;
-        /* background: rgba(0, 0, 0, 0.15); */
-      }
-      30%{
-        opacity: 0.3;
-        /* background: rgba(0, 0, 0, 0.2); */
-      }
-      40%{
-        opacity: 0.4;
-        /* background: rgba(0, 0, 0, 0.25); */
-      }
-      80%{
-        opacity: 0.5;
-       /* background: rgba(0, 0, 0, 0.3); */
-      }
-      60%{
-        opacity: 0.6;
-        /* background: rgba(0, 0, 0, 0.35); */
-      }
-      70%{
-        opacity: 0.7;
-        /* background: rgba(0, 0, 0, 0.4); */
-      }
-      80%{
-        opacity: 0.8;
-        /* background: rgba(0, 0, 0, 0.45); */
-      }
-      90%{
-        opacity: 0.9;
-        /* background: rgba(0, 0, 0, 0.5); */
-      }
-      100%{
-        opacity: 1;
-        /* background: rgba(0, 0, 0, 0.55); */
-      }
-    }
-   
-    	.bottom ul{
-    		width: 100%;
-    		height: 100%;
-    		overflow: hidden;
-    	}
-    		.bottom ul li{
-    			/* width: 42.5%;
-    			height: 40%; */
-    			background: red;
-    			margin-left: 5%;
-    			margin-top: 3%;
-    			border-radius: 3px;
-    		}
-		.bottom .xiang1 li{
-			width: 42.5%;
-    		height: 40%;
-    	}
-    	.bottom .xiang2{
-    		overflow: hidden;
-    	
-    	}
-    	.bottom .xiang2 li{
-    		width: 20%;
-    		height: 40%;
-    		margin-left: 10%;
-    		margin-top: 3%;
-    	}
-    	.bottom .xiang3{
-    		/* margin: 0; */
-    		position:relative;
-    	}
-    	.bottom .xiang3 li{
-    		width: 20%;
-    		height: 40%;
-    		margin-left: 10%;
-    		margin-top: 3%;
-    	}
-    	
-    	.bottom .xiang3 li:hover{
-    		width: 80%;
-    		height: 86%;
-    		position: absolute;
-    		top: 0;
-    		left: 0;
-    		background: red;
-    		z-index: 1000;
-    	}
-
-	.dingbu{
-		text-decoration: none;
-    position: fixed;
-    bottom: 14px;
-    right: 3%;
-    overflow: hidden;
-    width: 32px;
-    height: 32px;
-    border: none;
-    text-indent: 100%;
-    background-image: url('../images/movetop.png') ;
-	}
-	.you2-1{
-		display: none;
-	}
 /* 最小屏 */
 @media screen and (max-width:768px){
-	
+
 	.shou1-1{
 		height: 29px;
 	}
@@ -557,9 +400,9 @@ content: "";
 				}
 				.shou1-2 ul li ul .neme{
 					width: 60%;
-					
+
 					line-height: 34px;
-				
+
 					font-size: 14px;
 				}
 				.shou1-2{
@@ -572,12 +415,12 @@ content: "";
 /* 小平》=768	 */
 
 @media screen and (min-width:768px){
-	
+
 	.shou1-1{
 		height: 36px;
 	}
 	.zuo{
-		
+
 		line-height: 36px;
 	}
 	.you ul li{
@@ -622,9 +465,9 @@ content: "";
 				}
 				.shou1-2 ul li ul .neme{
 					width: 60%;
-					
+
 					line-height: 34px;
-				
+
 					font-size: 14px;
 				}
 	.shou1-2{
@@ -684,12 +527,12 @@ content: "";
 } */
 /* 大屏>=1200px */
 @media screen and (min-width:1200px){
-	
+
 	.shou1-1{
 		height: 47px;
 	}
 	.zuo{
-		
+
 		line-height: 47px;
 	}
 	.you ul li{
@@ -734,9 +577,9 @@ content: "";
 				}
 				.shou1-2 ul li ul .neme{
 					width: 200px;
-					
+
 					line-height: 38px;
-				
+
 					font-size: 16px;
 				}
 	.shou1-2{
