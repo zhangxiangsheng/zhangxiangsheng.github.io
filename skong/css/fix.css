@@ -1,0 +1,485 @@
+html {
+	font-family: "微软雅黑";
+}
+
+.clearfix {
+	zoom: 1
+}
+
+.clear {
+	clear: both;
+}
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.clearfix:after {
+	content: '';
+	visibility: hidden;
+	height: 0;
+	clear: both;
+	display: block
+}
+
+.fl_pop_wrap_cntr {
+	width: 100%;
+	height: 135px;
+	min-width: 1200px;
+	background: rgba(38, 41, 50, .8);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	display: none;
+	z-index: 1000;
+}
+
+.fl_pop_wrap_cntr .kefu,
+.fl_pop_wrap_cntr img {
+	display: block;
+	float: left
+}
+
+.fl_pop_wrap_cntr .fix-main {
+	width: 1200px;
+	margin: 0 auto;
+	position: relative
+}
+
+.fl_pop_wrap_cntr form {
+	float: left;
+	position: relative;
+	padding-top: 10px
+}
+
+.fl_pop_wrap_cntr .tip-img {
+	width: 500px;
+	margin-top: -5px
+}
+
+.fl_pop_wrap_cntr .form-input {
+	margin: 15px 0
+}
+
+.fl_pop_wrap_cntr input {
+	border: 0;
+	border-radius: 5px;
+	text-indent: 5px;
+	background: #fff;
+	outline: 0
+}
+
+.fl_pop_wrap_cntr input.input {
+	width: 260px;
+	height: 35px;
+}
+
+.fl_pop_wrap_cntr input.input1 {
+	width: 200px;
+	height: 30px;
+}
+
+.fl_pop_wrap_cntr input.input2 {
+	width: 180px;
+	height: 30px;
+}
+
+.fl_pop_wrap_cntr input.input3 {
+	width: 120px;
+	height: 30px;
+}
+
+.fl_pop_wrap_cntr .tip {
+	font-size: 10px;
+	color: #fff;
+	margin-top: -5px
+}
+
+.fl_pop_wrap_cntr .submit {
+	width: 135px;
+	height: 35px;
+	background: #fb0;
+	position: absolute;
+	left: 294px;
+	top: 70px;
+	color: #594601;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 700;
+	font-family: "微软雅黑";
+}
+
+.fl_pop_wrap_cntr .submit:hover {
+	background: #f1850e
+}
+
+.fix-btn {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	font-size: 38px;
+	line-height: 1.2;
+	font-family: Simsun;
+	color: #9aa1a8;
+	cursor: pointer;
+	z-index: 100;
+}
+
+.fl_open_wrap .fl_open_wrap_cntr {
+	position: fixed;
+	left: 0;
+	bottom: -140px;
+	width: 120px;
+	height: 124px;
+	background: url(../images/xiong.png) no-repeat;
+	cursor: pointer;
+	z-index: 9999;
+}
+
+
+/*---------报价---------------*/
+
+.index-bj-content {
+	width: 100%;
+	color: #000;
+	font-size: 14px;
+	background: #E9E9E9;
+}
+
+.index-bj {
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.index-bj ul {
+	background: rgba(255, 255, 255, 0.7);
+	padding: 30px 0 20px;
+}
+
+.index-bj .index-bj-1 {
+	background: url(../images/icon-bj_01.png) no-repeat;
+	padding-left: 30px;
+	line-height: 40px;
+	background-position: 0 6px;
+}
+
+.index-bj .index-bj-2 {
+	background: url(../images/icon-bj_02.png) no-repeat;
+	padding-left: 30px;
+	line-height: 40px;
+	background-position: 0 6px;
+	margin-left: 60px;
+}
+
+.index-bj .index-bj-2 input,
+.index-bj .index-bj-4 input,
+.index-bj .index-bj-5 input,
+.index-bj .index-bj-6 input {
+	border: 1px solid #ccc;
+	height: 30px;
+	line-height: 30px;
+}
+
+.index-bj .index-bj-3 input {
+	-webkit-appearance: none;
+}
+
+.index-bj .index-bj-3 {
+	background: url(../images/icon-bj_04.png) no-repeat;
+	padding-left: 30px;
+	line-height: 40px;
+	background-position: 0 6px;
+}
+
+.index-bj .index-bj-3 label {
+	border-radius: 4px;
+	border: 1px solid #aaa;
+	padding: 5px 10px;
+	margin: 4px;
+	cursor: pointer;
+}
+
+.index-bj .index-bj-3 label.active {
+	border: 1px solid #ffab19;
+	background: #E34130;
+	color: #fff;
+}
+
+.activev {
+	border: 1px solid #ffab19;
+	background: #E34130;
+	color: #fff;
+}
+
+.activevv {
+	border: 1px solid #ffab19;
+	background: #E34130;
+	color: #fff;
+}
+
+.index-bj .index-bj-4 {
+	background: url(../images/icon-bj_06.png) no-repeat;
+	padding-left: 30px;
+	line-height: 40px;
+	background-position: 0 6px;
+}
+
+.index-bj .index-bj-5 {
+	background: url(../images/icon-bj_07.png) no-repeat;
+	padding-left: 30px;
+	line-height: 40px;
+	background-position: 0 6px;
+}
+
+.index-bj .index-bj-6 {
+	background: url(../images/icon-bj_03.png) no-repeat;
+	padding-left: 30px;
+	line-height: 25px;
+	background-position: 0 6px;
+}
+
+.index-bj .index-bj-7 input {
+	-webkit-appearance: none;
+}
+
+.index-bj .index-bj-7 {
+	background: url(../images/icon-bj_04.png) no-repeat;
+	padding-left: 30px;
+	line-height: 40px;
+	background-position: 0 6px;
+}
+
+.index-bj .index-bj-7 label {
+	border-radius: 4px;
+	border: 1px solid #aaa;
+	padding: 5px 10px;
+	margin: 4px;
+	cursor: pointer;
+}
+
+.index-bj .index-bj-7 label.active {
+	border: 1px solid #ffab19;
+	background: #E34130;
+	color: #fff;
+}
+
+.index-bj .index-bj-8 input {
+	background: #a73125;
+	color: #fff;
+	border: none;
+	padding: 10px 30px;
+	border-radius: 4px;
+	font-size: 16px;
+	margin-right: 10px;
+	font-family: "微软雅黑";
+}
+
+.index-bj .index-bj-8 a {
+	background: #a73125;
+	color: #fff;
+	padding: 12px 30px;
+	border-radius: 4px;
+	font-size: 16px;
+}
+
+.index-bj li {
+	float: left;
+	margin-left: 40px;
+	margin-bottom: 20px;
+}
+
+.index-bj-right {
+	width: 440px;
+	padding-top: 30px;
+}
+
+select {
+	width: 80px;
+	height: 30px;
+	border-radius: 5px;
+}
+
+.index-bj-5 span.hqyzm {
+	background: #ffb119;
+	color: #fff;
+	padding: 5px 12px;
+	cursor: pointer;
+}
+
+.boxrow {
+	width: 1200px;
+	min-width: 1200px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 10;
+	padding-top: 29px;
+}
+
+.boxrow .input {
+	width: 187px;
+	height: 35px;
+	line-height: 35px;
+	border: 0;
+	margin-bottom: 7px;
+	position: relative;
+	color: #7d7d7d;
+	background: #fff;
+	overflow: hidden;
+}
+
+.boxrow .tel-tit {
+	font-size: 24px;
+	color: #fff;
+	margin-top: 10px;
+}
+
+.boxrow .tel-num {
+	font-size: 24px;
+	color: #d42021;
+}
+
+.fixed-bottom-bar .myform {
+	height: 80px;
+	padding-right: 110px;
+	position: relative;
+}
+
+#fixed-bottom-submit {
+	position: absolute;
+	top: 0;
+	right: 30px;
+	width: 80px;
+	height: 77px;
+	background: #d42021;
+	font-size: 18px;
+	color: #fff;
+	border: 0;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+
+/*获取报价*/
+
+.box {
+	width: 500px;
+	background: #fff;
+	box-shadow: 0 0 10px #aaa;
+	border-radius: 10px;
+	position: fixed;
+	top: 160px;
+	z-index: 10000;
+	left: 34%;
+	display: none;
+}
+
+.box .title {
+	height: 50px;
+	background: rgb(167, 49, 37);
+	font-size: 20px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	padding: 0 10px;
+	color: #fff;
+}
+
+.box .title .box_title {
+	float: left;
+	line-height: 50px;
+}
+
+.box .close {
+	float: right;
+	width: 30px;
+	height: 30px;
+	margin-top: 8px;
+	z-index: 1000
+}
+
+.box .count {
+	margin: 20px 0;
+	line-height: 30px;
+	margin-top: 10px;
+}
+
+.box .count .tit {
+	width: 96%;
+	margin: 0 auto;
+	font-size: 16px;
+}
+
+.box .count .con {
+	margin: 10px auto;
+	width: 90%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+
+.box .count .con .name {
+	width: 100px;
+	float: left;
+	height: 30px;
+	line-height: 30px;
+}
+
+.box .count .con .button {
+	display: inline-block;
+	height: 34px;
+	line-height: 34px;
+	color: #A73125;
+	margin: 0;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.box .count .con input {
+	float: left;
+	border: 1px solid #ccc;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #C03
+}
+
+.box .count .con .hx input {
+	width: 73px;
+}
+
+.box .count .wid80 {
+	width: 96px;
+}
+
+.box .count .wid60 {
+	width: 65%;
+}
+
+.box .count .con span {
+	float: left;
+	margin: 0 10px;
+}
+
+.cored {
+	color: #A73125;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 9999;
+	background-color: #000000;
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+	overflow: hidden;
+	display: none;
+}

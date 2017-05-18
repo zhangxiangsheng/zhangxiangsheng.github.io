@@ -8,7 +8,16 @@ ul{
 a,img{
     display: block;
 }
-.content-main{ position: relative; width: 800px; height: 411px; margin-left: auto; margin-right: auto; margin-top: 50px; }
+/*.content-main{ position: relative; width: 800px; height: 411px; margin-left: auto; margin-right: auto; margin-top: 50px; }*/
+.content-main{
+    position: absolute;
+    left: 0;
+    right:0;
+
+    margin: auto;
+
+    top: 150px;
+}
 .content-btn{
     position: absolute;
     width:100px;
@@ -46,4 +55,28 @@ a,img{
     left:0;
     top:0;
     overflow: hidden;
+}
+.boxss{
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/01.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.boxss:before{
+    background: rgba(0,0,0,0.6);
+}
+.zhezhao{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 30px;
+    text-align: center;
+    line-height: 100px;
 }

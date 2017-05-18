@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="JQuery.js"></script>
+    <script>
+        $(document).ready(function () {
+            var num = 15;
+            var num1=15;
+            var bi=0.85;
+            var le=15;
+            var float;
+            var time;
+            var t;
+            function create() {
+                time =120;
+                t = setInterval(function () {
+                    $(".time").html("time:"+time+"s")
+                    if (time == 0) {
+                        gameover()
+                    }
+                    time--;
+                }, 1000)
+                do {
+                    $(".scene").empty()
+                    for (var i = 0; i < 10; i++) {
+                        for (var j = 0; j < 10; j++) {
+                            var isLei = Math.random() > bi;
+                            $("<div>")
+                                    .addClass(function () {
+                                        if (isLei) {
+                                            return "block lei"
+                                        } else {
+                                            return "block"
+                                        }
+                                    })
+                                    .attr("id", i + "-" + j)
+                                    .data("pos", {x: i, y: j})
+                                    .mousedown(mousedownEvent)
+                                    .appendTo(".scene")
+                        }
+                    }
+                } while ($(".lei").length != le)
+            }
+
+            function mousedownEvent(e) {
+                if (e.which == 1) {
+                    leftclick.call(this)
+                }
+                if (e.which == 3) {
+                    rightclick.call(this)
+                }
+            }
+
+            function leftclick() {
+                if ($(this).hasClass("flag")) {
+                    return
+                }
+                if ($(this).hasClass("lei")) {
+                    $(".lei").addClass("show")
+                    gameover()
+
+                } else {
+                    var pos = $(this).data("pos")
+                    $(this).addClass("num")
+                    var n = 0;
+                    for (var i = pos.x - 1; i <= pos.x + 1; i++) {
+                        for (var j = pos.y - 1; j <= pos.y + 1; j++) {
+                            if ($("#" + i + "-" + j).hasClass("lei")) {
+                                n++;
+                            }
+                        }
+                    }
+                    $(this).html(n)
+                    if (n == 0) {
+                        for (var i = pos.x - 1; i <= pos.x + 1; i++) {
+                            for (var j = pos.y - 1; j <= pos.y + 1; j++) {
+                                var obj = $("#" + i + "-" + j)
+                                console.log(obj)
+                                if (obj.length == 1 && !obj.hasClass("num")) {
+                                    leftclick.call(obj.get(0))
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            function rightclick() {
+                if ($(this).hasClass("num")) {
+                    return
+                }
+                if ($(this).hasClass("flag")) {
+                    $(this).removeClass("flag")
+                    num++;
+                    $(".flagnum").html("flag:" + num)
+                } else {
+                    num--;
+                    if (num < 0) {
+                        num++;
+                        alert("请重新选择")
+                        return;
+                    }
+                    $(this).addClass("flag")
+                    if (num == 0) {
+                        if ($(".flag").filter(".lei").length == num1) {
+                            success()
+                        }
+                    }
+                    $(".flagnum").html("flag:" + num)
+                }
+            }
+
+            $(document).on("contextmenu", function (e) {
+                e.preventDefault()
+            })
+            //date
+            $(".start").click(function () {
+                float = true;
+                start()
+                console.log(float)
+            })
+                $(".restart").click(function () {
+                    start()
+                })
+            $(".mask input").click(function () {
+                $(".mask").css("display", "none")
+                start()
+
+            })
+            $(".mask2 input").click(function () {
+                $(".mask2").css("display", "none")
+                start()
+
+            })
+            $(".choose").click(function () {
+                $(".mask3").css("display","block")
+                clearInterval(t)
+            })
+            $(".diffcult").click(function () {
+                $(".mask3").css("display","none")
+                bi=0.85;
+                le=15;
+                num1=15;
+                num=15;
+                start()
+            })
+            $(".easy").click(function () {
+                $(".mask3").css("display","none")
+                num = 10;
+                num1=10;
+                bi=0.9;
+                le=10;
+                start()
+            })
+            $(".pai").click(function () {
+                $(".context").slideToggle(500)
+            })
+            function gameover() {
+                clearInterval(t)
+                $(".mask").css("display", "block")
+            }
+            function start() {
+                clearInterval(t)
+                create()
+                $(".mask").css("display", "none")
+                num=num1;
+                $(".flagnum").html("flag:" + num)
+            }
+            var bestscor=localStorage.bestscor?JSON.parse(localStorage.bestscor):[]
+            console.log(bestscor.length)
+            function success() {
+                if(bestscor.length<3||(bestscor.length>=3&&time<bestscor[2].time)){
+                    var player= prompt("请输入名字")
+                    bestscor.push({player,time:120-time})
+                    bestscor.sort(function (a,b) {
+                        if(a.time<b.time){
+                            return -1;
+                        }else{
+                            return 1;
+                        }
+                    })
+                    if(bestscor.length>3){
+                        bestscor.pop()
+                    }
+                    localStorage.bestscor=JSON.stringify(bestscor)
+                }
+                clearInterval(t)
+                $(".mask2").css("display", "block")
+                $(".item1").html("第一名"+bestscor[0].player+":"+bestscor[0].time+"s")
+                $(".item2").html("第二名"+bestscor[1].player+":"+bestscor[1].time+"s")
+                $(".item3").html("第三名"+bestscor[2].player+":"+bestscor[2].time+"s")
+            }
+        })
+    </script>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        .scene {
+            width: 500px;
+            height: 500px;
+            border-top: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+            margin: 0 auto;
+            background:black;
+        }
+        .block {
+            width: 49px;
+            height: 49px;
+            background: #333;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            float: left;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px
+        }
+        /*.lei{
+            background: ;
+        }*/
+        .control {
+            width: 300px;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background: #212121;
+        }
+        .restart,.choose,.flagnum,.start,.time,.pai{
+            cursor: pointer;
+            width: 150px;
+            height:50px;
+            background: #53ff67;
+            text-align: center;
+            line-height: 50px;
+            border-radius: 20px;
+            margin-left: 80px;
+            margin-top: 20px;
+            border:none;
+        }
+        .show {
+            background: #333 url("img/zhadan.png") no-repeat;
+            background-size: 100%;
+            background-position: 10px 5px;
+        }
+
+        .num {
+            background: #fff;
+            color: black;
+        }
+
+        .flag {
+            background: url("img/qizhi.png") no-repeat;
+            background-size: 100%;
+            background-position: 4px;
+        }
+        .mask ,.mask2,.mask3{
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            display: none;
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .mask .bei,.mask2 .bei2,.mask3 .bei3 {
+            width: 300px;
+            height: 200px;
+            background: #ff666e;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            padding-top: 20px;
+        }
+
+        .mask .bei input,.mask2 .bei2 input {
+            width: 100px;
+            height: 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            border: none;
+            border-radius: 10px;
+        }
+        .mask3 .bei3>div{
+            width: 120px;
+            height: 60px;
+            float: left;
+            margin-left: 20px;
+            margin-top: 70px;
+            text-align: center;
+            line-height: 60px;
+            background: rgba(0,0,0,0.5);
+            cursor: pointer;
+        }
+        .context{
+            width: 150px;
+            height: 90px;
+            background: white;
+            position: fixed;
+            top: 430px;
+            right: 65px;
+            display: none;
+        }
+        .item{
+            width: 150px;
+            height: 30px;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+        }
+        .jiemian{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.89);
+            display: none;
+
+        }
+        .zhong{
+            width: 1200px;
+            height: 100%;
+             background: pink;
+            background-size: contain;
+            background-position:  200px 0;
+            position: relative;
+
+        }
+        .sao{
+            width: 150px;
+            height: 60px;
+            font-size: 16px;
+            line-height: 60px;
+            text-align: center;
+            color: white;
+            background: #f3f3f3 ;
+            border-radius:  15px;
+            position: absolute;
+            top: 150px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="scene"></div>
+<div class="control">
+    <input type="button" class="start" value="游戏开始">
+    <div class="time">time:120s</div>
+    <div class="flagnum">flag:15</div>
+    <div class="restart">重新开始</div>
+    <div class="choose">难度选择</div>
+    <div class="pai">排行榜</div>
+</div>
+<div class="mask">
+    <div class="bei">
+        游戏结束
+        <input type="button" value="重新开始">
+    </div>
+</div>
+<div class="mask2">
+    <div class="bei2">
+        游戏成功
+        <input type="button" value="继续">
+    </div>
+</div>
+<div class="mask3">
+    <div class="bei3">
+        <div class="easy">简单</div>
+        <div class="diffcult">困难</div>
+    </div>
+</div>
+<div class="jiemian">
+    <div class="zhong">
+        <div class="sao">
+            扫雷游戏
+        </div>
+    </div>
+</div>
+<div class="context">
+    <div class="item item1">第一名 </div>
+    <div class="item item2">第二名 </div>
+    <div class="item item3">第三名 </div>
+</div>
+</body>
+</html>

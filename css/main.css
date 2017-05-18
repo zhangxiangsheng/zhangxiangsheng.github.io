@@ -142,6 +142,15 @@ input[type="submit"] {
 	font-size: 16px;
 	padding: 13px 40px;
 }
+input[type="submit"]:hover, input[type="submit"]:focus {
+	box-shadow: 0 0 2px 1px #6ba78a;, 0 0 2px 1px #00a78e;
+	background: #00a78e;
+	-webkit-transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
+	transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
+	-webkit-animation: gelatine 0.5s 1;
+	animation: gelatine 0.5s 1;
+}
+
 .box4xl{
 	 float: left;
  }
@@ -230,3 +239,5 @@ position: absolute;
 	left: 0;
 	background: black;
 }
+
+

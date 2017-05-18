@@ -1,17 +1,10 @@
 *{
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
-	text-decoration: none; /* 清除a标签下划线 */
-	list-style-type:none;
-	outline: none;
+	text-decoration: none;
+	list-style: none;
 }
 a{
-	color: #808080;
-	
-
+	color: #666;
 }
-a:hover{
-        	color: #afdd22;
-        }
-  a{text-decoration:none} 

@@ -1,0 +1,117 @@
+.HS10,
+.HS15 {
+	overflow: hidden;
+	clear: both;
+}
+
+.HS10 {
+	height: 10px;
+}
+
+.HS15 {
+	height: 15px;
+}
+
+.Hidden {
+	display: none;
+}
+
+.Clearer {
+	display: block;
+	clear: both;
+	font-size: 1px;
+	line-height: 1px;
+	margin: 0;
+	padding: 0;
+}
+
+.FlLeft {
+	float: left;
+}
+
+.FlRight {
+	float: right;
+}
+
+
+/*幻灯片区域背景*/
+
+.MainBg {
+	background-color: #222;
+	width: 850px;
+	margin: 0 auto;
+}
+
+
+/*大图展示区域*/
+
+.OriginalPicBorder {
+	padding: 15px 15px 0 15px;
+}
+
+#OriginalPic {
+	width: 820px;
+	overflow: hidden;
+	position: relative;
+	font-size: 12px;
+}
+
+#OriginalPic img {
+	display: block;
+	margin: 0 auto;
+	width: 820px;
+	height: 600px;
+}
+
+
+/*鼠标手势*/
+
+.CursorL {
+	position: absolute;
+	z-index: 999;
+	width: 50%;
+	height: 600px;
+	color: #FFF;
+	left: 0px;
+	cursor: url(../images/CurL.cur), auto;
+	background: url(../images/space.png) repeat scroll 0 0 transparent;
+}
+
+.CursorR {
+	position: absolute;
+	z-index: 999;
+	width: 50%;
+	height: 600px;
+	color: #FFF;
+	right: 0;
+	cursor: url(../images/CurR.cur), auto;
+	background: url(../images/space.png) repeat scroll 0 0 transparent;
+}
+
+
+/*小图预览和滑动*/
+
+.SliderPicBorder {
+	width: 820px;
+	height: 600px;
+	overflow: hidden;
+}
+
+.ThumbPicBorder {
+	width: 800px;
+	margin: 0 auto;
+}
+
+#ThumbPic img {
+	border: 3px solid #666;
+	cursor: pointer;
+	background-color: #666;
+	margin: 0 4px;
+	width: 107px;
+	height: 80px;
+	display: block;
+}
+
+#ThumbPic img.active {
+	border: 3px solid #FF9900;
+}
