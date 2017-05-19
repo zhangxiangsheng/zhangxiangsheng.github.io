@@ -1,16 +1,17 @@
 *{
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
-	text-decoration: none; /* 清除a标签下划线 */
-	list-style-type:none;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;    /* 取消a标签的下划线 */
+	box-sizing: border-box;   /* 去除边框 */
+	list-style: none;
+	text-decoration: none;  /* a标签是有下划线的，此条语句是为了去除标签下的下划线 */
 }
 a{
 	color: #808080;
-	
-
 }
-a:hover{
-        	color: #afdd22;
-        }
-  a{text-decoration:none} 
+<style>
+	/* 清除默认样式，群组选择器： */
+	ul,li,ol{
+		list-style: none;
+	}
+</style>
